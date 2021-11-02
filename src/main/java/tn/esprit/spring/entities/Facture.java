@@ -6,7 +6,16 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Data
+@AllArgsConstructor
 public class Facture implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -24,62 +33,6 @@ public class Facture implements Serializable{
 	@JoinColumn(name="idClient")
     private Client client;
 
-	public Long getIdFacture() {
-		return idFacture;
-	}
-
-	public void setIdFacture(Long idFacture) {
-		this.idFacture = idFacture;
-	}
-
-	public float getMontantRemise() {
-		return montantRemise;
-	}
-
-	public void setMontantRemise(float montantRemise) {
-		this.montantRemise = montantRemise;
-	}
-
-	public float getMontantFacture() {
-		return montantFacture;
-	}
-
-	public void setMontantFacture(float montantFacture) {
-		this.montantFacture = montantFacture;
-	}
-
-	public Date getDateFacture() {
-		return dateFacture;
-	}
-
-	public void setDateFacture(Date dateFacture) {
-		this.dateFacture = dateFacture;
-	}
-
-	public boolean isActive() {
-		return active;
-	}
-
-	public void setActive(boolean active) {
-		this.active = active;
-	}
-
-	public Set<DetailFacture> getFactDetails() {
-		return factDetails;
-	}
-
-	public void setFactDetails(Set<DetailFacture> factDetails) {
-		this.factDetails = factDetails;
-	}
-
-	public Client getClient() {
-		return client;
-	}
-
-	public void setClient(Client client) {
-		this.client = client;
-	}
-	
 	
 	
 }

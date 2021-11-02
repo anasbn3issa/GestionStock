@@ -2,10 +2,20 @@ package tn.esprit.spring.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.*;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Data
+@AllArgsConstructor
 public class DetailProduit implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -20,45 +30,6 @@ public class DetailProduit implements Serializable{
 	@OneToOne(mappedBy = "detailProduit")
     private Produit produit;
 
-	public Long getIdDetailProduit() {
-		return idDetailProduit;
-	}
-
-	public void setIdDetailProduit(Long idDetailProduit) {
-		this.idDetailProduit = idDetailProduit;
-	}
-
-	public Date getDateCreation() {
-		return dateCreation;
-	}
-
-	public void setDateCreation(Date dateCreation) {
-		this.dateCreation = dateCreation;
-	}
-
-	public Date getDateDernièreModification() {
-		return dateDernièreModification;
-	}
-
-	public void setDateDernièreModification(Date dateDernièreModification) {
-		this.dateDernièreModification = dateDernièreModification;
-	}
-
-	public CategorieProduit getCategorieProduit() {
-		return categorieProduit;
-	}
-
-	public void setCategorieProduit(CategorieProduit categorieProduit) {
-		this.categorieProduit = categorieProduit;
-	}
-
-	public Produit getProduit() {
-		return produit;
-	}
-
-	public void setProduit(Produit produit) {
-		this.produit = produit;
-	}
 	
 	
 

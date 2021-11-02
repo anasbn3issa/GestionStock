@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import lombok.extern.slf4j.Slf4j;
 import tn.esprit.spring.entities.Client;
 import tn.esprit.spring.entities.Stock;
 import tn.esprit.spring.services.client.ClientServiceImpl;
@@ -23,6 +24,7 @@ import tn.esprit.spring.services.stock.StkServiceImpl;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Slf4j
 public class CltServiceImplTest {
 
 	@Autowired
@@ -42,6 +44,7 @@ public class CltServiceImplTest {
 	        assertNotNull(clients.get(0));
 	        assertTrue(clients.size()>0);
 	        cltServiceImpl.deleteClient(c1.getIdClient());
+	        
 	        
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block

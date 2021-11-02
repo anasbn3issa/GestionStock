@@ -6,7 +6,16 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Data
+@RequiredArgsConstructor
 public class Produit implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -32,77 +41,6 @@ public class Produit implements Serializable{
 	@ManyToMany(cascade = CascadeType.ALL)
 	private Set<Fournisseur> fournisseurs;
 
-	public Long getIdProduit() {
-		return idProduit;
-	}
-
-	public void setIdProduit(Long idProduit) {
-		this.idProduit = idProduit;
-	}
-
-	public DetailProduit getDetailProduit() {
-		return detailProduit;
-	}
-
-	public void setDetailProduit(DetailProduit detailProduit) {
-		this.detailProduit = detailProduit;
-	}
-
-	public String getCode() {
-		return code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getLibelle() {
-		return libelle;
-	}
-
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
-	}
-
-	public float getPrixUnitaire() {
-		return prixUnitaire;
-	}
-
-	public void setPrixUnitaire(float prixUnitaire) {
-		this.prixUnitaire = prixUnitaire;
-	}
-
-	public Stock getStock() {
-		return stock;
-	}
-
-	public void setStock(Stock stock) {
-		this.stock = stock;
-	}
-
-	public Rayon getRayon() {
-		return rayon;
-	}
-
-	public void setRayon(Rayon rayon) {
-		this.rayon = rayon;
-	}
-
-	public Set<DetailFacture> getFactDetails() {
-		return factDetails;
-	}
-
-	public void setFactDetails(Set<DetailFacture> factDetails) {
-		this.factDetails = factDetails;
-	}
-
-	public Set<Fournisseur> getFournisseurs() {
-		return fournisseurs;
-	}
-
-	public void setFournisseurs(Set<Fournisseur> fournisseurs) {
-		this.fournisseurs = fournisseurs;
-	}
 	
 	
 }
