@@ -2,6 +2,7 @@ package tn.esprit.spring;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import java.util.List;
 
@@ -45,5 +46,17 @@ public class StkServiceImplTest {
     //assertEquals(expected+1, stkServiceImpl.retrieveAllStock().size());
     assertNotNull(savedStock.getLibelleStock());
     stkServiceImpl.deleteStock(savedStock.getIdStock());
+    }
+    
+    
+    @Test
+    public void testDeleteStock() {
+    	Stock s = new Stock();
+    	s.setLibelleStock("stock test");
+        s.setQte(10);
+        s.setQteMin(100);
+    	Stock savedStock = stkServiceImpl.addStock(s);
+        stkServiceImpl.deleteStock(savedStock.getIdStock());
+        assertNull(savedStock.getLibelleStock());
     }
 }
