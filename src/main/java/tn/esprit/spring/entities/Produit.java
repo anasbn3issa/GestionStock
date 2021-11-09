@@ -10,11 +10,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Data
+@NoArgsConstructor
 @RequiredArgsConstructor
 public class Produit implements Serializable{
 	@Id
@@ -22,9 +24,13 @@ public class Produit implements Serializable{
 	private Long idProduit; // Clé primaire
 	@OneToOne
     @JoinColumn(name = "idDetailProduit")
+	@NonNull
 	private DetailProduit detailProduit;
+	@NonNull
 	private String code;
+	@NonNull
 	private String libelle;
+	@NonNull
 	private float prixUnitaire;
 	
 	@ManyToOne
@@ -33,6 +39,7 @@ public class Produit implements Serializable{
 	
 	@ManyToOne
     @JoinColumn(name="idRayon")
+	@NonNull
     private Rayon rayon;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="produit")

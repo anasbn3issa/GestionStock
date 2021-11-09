@@ -15,6 +15,7 @@ import lombok.Setter;
 
 @Entity
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class Rayon implements Serializable{
 	@Id

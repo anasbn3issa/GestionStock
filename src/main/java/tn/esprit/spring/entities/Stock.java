@@ -16,6 +16,7 @@ import lombok.Setter;
 
 @Entity
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class Stock implements Serializable{
 	@Id

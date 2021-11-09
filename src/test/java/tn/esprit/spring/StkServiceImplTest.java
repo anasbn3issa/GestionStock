@@ -35,7 +35,7 @@ public class StkServiceImplTest {
     }
     
     @Test
-    public void testAddStock() {
+    public void testAddStock() { 
     /*List<Stock> stocks = stkServiceImpl.retrieveAllStock();
     int expected=stocks.size();*/
     Stock s = new Stock();
