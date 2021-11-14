@@ -15,18 +15,19 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Stock implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private Long idStock; // Clé primaire
+	private Long idStock;
 	private Integer qte;
 	private Integer qteMin;
 	private String libelleStock;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="stock")
+	@OneToMany(mappedBy="stock")
 	private Set<Produit> produits;
 	
 

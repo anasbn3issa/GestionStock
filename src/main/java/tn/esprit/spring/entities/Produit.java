@@ -6,6 +6,9 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.NotNull;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -15,7 +18,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @RequiredArgsConstructor
 public class Produit implements Serializable{
@@ -34,18 +38,22 @@ public class Produit implements Serializable{
 	private float prixUnitaire;
 	
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name="idStock")
     private Stock stock;
 	
 	@ManyToOne
+	@JsonIgnore
     @JoinColumn(name="idRayon")
-	@NonNull
     private Rayon rayon;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="produit")
+	@OneToMany(mappedBy="produit")
+	@JsonIgnore
 	private Set<DetailFacture> factDetails;
 	
+	@NotNull
 	@ManyToMany(cascade = CascadeType.ALL)
+	@JsonIgnore
 	private Set<Fournisseur> fournisseurs;
 
 	
