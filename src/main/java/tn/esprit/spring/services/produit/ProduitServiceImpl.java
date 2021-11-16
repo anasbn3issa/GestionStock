@@ -16,6 +16,8 @@ public interface ProduitServiceImpl {
 	Produit retrieveProduit(Long id);
 	
 	Produit updateProduit(Produit p);
+	
+	public void assignFournisseurToProduit(Long fournisseurId,Long produitId);
 
-
+	public void assignProduitToStock(Long idProduit, Long idStock);
 }

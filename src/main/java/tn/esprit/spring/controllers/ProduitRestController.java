@@ -49,4 +49,20 @@ public class ProduitRestController {
 					return produitService.retrieveProduit(produitId);
 				}
 
+				//http://localhost:8089/SpringMVC/produit/assignfournisseurproduit/3/2
+				@PostMapping("/assignfournisseurproduit/{produit-id}/{fournisseur-id}")
+				@ResponseBody
+				@ApiOperation("assigns a fournisseur to a produit")
+				public void assignFournisseurToProduit(@PathVariable("produit-id") Long produitId,@PathVariable("fournisseur-id") Long fournisseurId) {
+					produitService.assignFournisseurToProduit(produitId,fournisseurId);
+				}
+				
+				//http://localhost:8089/SpringMVC/produit/assignstockproduit/3/2
+				@PostMapping("/assignstockproduit/{produit-id}/{stock-id}")
+				@ResponseBody
+				@ApiOperation("assigns a stock to a produit")
+				public void assignStockToProduit(@PathVariable("produit-id") Long produitId,@PathVariable("stock-id") Long stockId) {
+					produitService.assignProduitToStock(produitId, stockId);
+				}
+
 }
