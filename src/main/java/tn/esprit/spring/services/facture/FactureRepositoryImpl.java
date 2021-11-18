@@ -1,5 +1,6 @@
 package tn.esprit.spring.services.facture;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,5 +50,11 @@ public class FactureRepositoryImpl implements FactureRepositoryCustom{
 				facture.setActive(false);
 				updateFacture(facture);
 			}
+	}
+
+	@Override
+	public float calculChiffreAffaire(Date d1, Date d2) {
+		//je vais pas travailler avec le service pour le moment, regardez la methode dans "package tn.esprit.spring.scheduled"
+		return facturerepository.calculChiffreAffaires(d1,d2);
 	}
 }

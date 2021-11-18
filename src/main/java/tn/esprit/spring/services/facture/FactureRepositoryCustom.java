@@ -1,5 +1,6 @@
 package tn.esprit.spring.services.facture;
 
+import java.util.Date;
 import java.util.List;
 
 import tn.esprit.spring.entities.Facture;
@@ -18,5 +19,6 @@ public interface FactureRepositoryCustom {
 	Facture retrieveFacture(Long id);
 	
 	void cancelFacture(Long id);
+	float calculChiffreAffaire(Date d1, Date d2);
 
 }

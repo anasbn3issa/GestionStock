@@ -19,12 +19,10 @@ import tn.esprit.spring.entities.Stock;
 import tn.esprit.spring.repositories.ClientRepository;
 import tn.esprit.spring.repositories.FournisseurRepository;
 import tn.esprit.spring.repositories.ProduitRepository;
-import tn.esprit.spring.repositories.RayonRepository;
 import tn.esprit.spring.repositories.StockRepository;
 import tn.esprit.spring.services.detailProd.ProdDetServiceImpl;
 import tn.esprit.spring.services.rayon.RynServiceImpl;
 import tn.esprit.spring.services.stock.StkServiceImpl;
-
 @Service
 public class PrdServiceImpl implements ProduitServiceImpl{
 	
