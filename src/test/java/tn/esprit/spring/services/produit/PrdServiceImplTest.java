@@ -1,4 +1,4 @@
-package tn.esprit.spring.services.produit;
+/*package tn.esprit.spring.services.produit;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.*;
@@ -49,4 +49,4 @@ class PrdServiceImplTest {
 
 	}
 
-}
+}*/

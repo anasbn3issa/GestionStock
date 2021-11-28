@@ -1,5 +1,8 @@
 package tn.esprit.spring.controllers;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,5 +66,23 @@ public class ProduitRestController {
 				@ApiOperation("assigns a stock to a produit")
 				public void assignStockToProduit(@PathVariable("produit-id") Long produitId,@PathVariable("stock-id") Long stockId) {
 					produitService.assignProduitToStock(produitId, stockId);
+				}
+				
+				//http://localhost:8089/SpringMVC/produit/retrieve-produit/3
+				@GetMapping("/revenubrut/{produit-id}")
+				@ResponseBody
+				@ApiOperation(value ="Permet de calculer le revenu brut d'un produit entre deux dates")
+				public float RevenuBrutProduit(@PathVariable("produit-id") Long produitId) {
+					Date date1= new Date();
+					Date date2= new Date();
+					SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd"); 
+					try {
+						date1 = simpleDateFormat.parse("2021-10-01");
+						date2 = simpleDateFormat.parse("2021-12-02");
+					} catch (ParseException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} 
+					return produitService.getRevenuBrutProduit(produitId,date1,date2);
 				}
 }
