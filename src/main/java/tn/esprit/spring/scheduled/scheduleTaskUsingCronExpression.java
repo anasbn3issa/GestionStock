@@ -41,7 +41,7 @@ public class scheduleTaskUsingCronExpression {
 		 Date cdate = cal.getTime();
 		 cal.add(Calendar.YEAR, -2); 
 	      Date previousyear = cal.getTime();
-	      log.info("chiffre d'affaire pour cette année : "+factRepo.calculChiffreAffaires(cdate, previousyear));
+	      log.info("chiffre d'affaire pour cette année : "+factRepo.calculChiffreAffairesBetweenTwoDates(cdate, previousyear));
 	}
 	
 	@Scheduled(cron="0 0 0 1 0 0")
@@ -50,7 +50,7 @@ public class scheduleTaskUsingCronExpression {
 		Date cdate = cal.getTime();
 		cal.add(Calendar.MONTH, -1);
 		Date previousmonth = cal.getTime();
-	     log.info("chiffre d'affaire pour cette année : "+factRepo.calculChiffreAffaires(cdate, previousmonth));
+	     log.info("chiffre d'affaire pour cette année : "+factRepo.calculChiffreAffairesBetweenTwoDates(cdate, previousmonth));
 
 	}
 }

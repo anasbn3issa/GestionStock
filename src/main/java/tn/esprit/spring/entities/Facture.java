@@ -6,6 +6,11 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -15,6 +20,7 @@ import lombok.Setter;
 
 @Entity
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class Facture implements Serializable{
 	@Id
@@ -27,9 +33,11 @@ public class Facture implements Serializable{
 	private boolean active;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="facture")
+	@JsonIgnore
 	private Set<DetailFacture> factDetails;
 	
 	@ManyToOne
+	@Fetch(value=FetchMode.SELECT)
 	@JoinColumn(name="idClient")
     private Client client;
 

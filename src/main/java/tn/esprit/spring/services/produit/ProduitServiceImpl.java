@@ -1,5 +1,6 @@
 package tn.esprit.spring.services.produit;
 
+import java.util.Date;
 import java.util.List;
 
 import tn.esprit.spring.entities.Client;
@@ -20,4 +21,6 @@ public interface ProduitServiceImpl {
 	public void assignFournisseurToProduit(Long fournisseurId,Long produitId);
 
 	public void assignProduitToStock(Long idProduit, Long idStock);
+	
+	float getRevenuBrutProduit(Long idProduit, Date startDate, Date endDate);
 }

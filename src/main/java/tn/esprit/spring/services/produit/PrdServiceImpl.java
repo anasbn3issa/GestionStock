@@ -113,5 +113,9 @@ public class PrdServiceImpl implements ProduitServiceImpl{
 
 		
 	}
+	@Override
+	public float getRevenuBrutProduit(Long idProduit, Date startDate, Date endDate) {
+		return produitRepository.getRevenuBrutProduit(idProduit, startDate, endDate);
+	}
 
 }

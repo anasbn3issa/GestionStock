@@ -19,5 +19,6 @@ public interface ClientServiceImpl {
 	Client retrieveClient(Long id);
 	
 	List<Client> retrieveClientsByProfession(Date date1, Date date2);
+	
 
 }

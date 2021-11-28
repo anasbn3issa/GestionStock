@@ -6,6 +6,8 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -20,7 +22,6 @@ import lombok.Setter;
 public class Client implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	@Column(name="idClient")
 	private Long idClient; // Clé primaire
 	private String nom;
 	private String prenom;
@@ -34,6 +35,7 @@ public class Client implements Serializable{
 	private CategorieClient categorieClient;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
+	@JsonIgnore
 	private Set<Facture> factures;
 
 	

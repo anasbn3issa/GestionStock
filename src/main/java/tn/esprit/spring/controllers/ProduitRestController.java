@@ -64,5 +64,4 @@ public class ProduitRestController {
 				public void assignStockToProduit(@PathVariable("produit-id") Long produitId,@PathVariable("stock-id") Long stockId) {
 					produitService.assignProduitToStock(produitId, stockId);
 				}
-
 }
