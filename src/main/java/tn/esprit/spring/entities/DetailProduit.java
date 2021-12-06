@@ -6,6 +6,8 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -15,8 +17,9 @@ import lombok.Setter;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+
 public class DetailProduit implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -24,7 +27,7 @@ public class DetailProduit implements Serializable{
 	@Temporal(TemporalType.DATE)
 	private Date dateCreation;
 	@Temporal(TemporalType.DATE)
-	private Date dateDernièreModification;
+	private Date dateDerniereModification;
 	@Enumerated(EnumType.STRING)
 	private CategorieProduit categorieProduit;
 	

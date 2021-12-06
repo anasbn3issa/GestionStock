@@ -58,7 +58,7 @@ public class PrdServiceImpl implements ProduitServiceImpl{
 		Date date = new Date(System.currentTimeMillis());
 		try {
 			dp.setDateCreation(formatter.parse(formatter.format(date)));
-			dp.setDateDernièreModification(formatter.parse(formatter.format(date)));
+			dp.setDateDerniereModification(formatter.parse(formatter.format(date)));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -80,7 +80,7 @@ public class PrdServiceImpl implements ProduitServiceImpl{
 		Date date = new Date(System.currentTimeMillis());
 		try {
 			dp.setDateCreation(formatter.parse(formatter.format(date)));
-			dp.setDateDernièreModification(formatter.parse(formatter.format(date)));
+			dp.setDateDerniereModification(formatter.parse(formatter.format(date)));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

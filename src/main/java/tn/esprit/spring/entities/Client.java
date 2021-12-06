@@ -18,6 +18,7 @@ import lombok.Setter;
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Table( name = "Client")
 public class Client implements Serializable{
 	@Id
